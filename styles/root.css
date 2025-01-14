@@ -1,0 +1,11 @@
+.bettyman-layout {
+  --color-black: #0c1017;
+  --color-yellow: hsla(43, 100%, 53%, 1);
+  --color-green: #20fb56;
+  --color-violet: #af03fa;
+  --color-turquoise: #0bffe2;
+  --color-gray: #8f94b4;
+  --color-dark-gray: #161621;
+  --gradient-dark-gray: linear-gradient(180deg, #2c2d3c 0%, #20212a 100%);
+  --container-offset: 32px;
+}
