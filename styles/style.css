@@ -661,6 +661,10 @@ button {
   background-color: var(--counter-left-bg-color, var(--color-turquoise));
 }
 
+.button-nav__item-counter span.left.active-text-color {
+  color: var(--color-turquoise);
+}
+
 .button-nav__item-counter span.right {
   color: var(--counter-right-color, #ffffff);
   background-color: var(--counter-right-bg-color, var(--color-violet));
