@@ -188,100 +188,178 @@
           <style>
             .card-live {
               background-color: #2a2a3c;
-              border-radius: 15px;
-              width: 300px;
+              border-radius: 0.95vw;
+              /* width: 22.917vw; */
+              width: clamp(100px, 22.917vw, 440px);
+              height: 15.833vw;
               overflow: hidden;
-              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
               text-align: center;
               position: relative;
             }
+            .card-live-header__wrap {
+              background-color: inherit;
+              width: 9.375vw;
 
-            .card-live-header {
-              background-color: #00ff75;
-              color: #2a2a3c;
-              font-size: 18px;
-              font-weight: bold;
-              padding: 20px 15px 10px 20px;
+              height: 15%;
+
               position: absolute;
-              top: -8px;
-              left: -8px;
-              border-radius: 8px;
+
+              border-radius: 0 0 15px 0;
+            }
+            .card-live-header__text {
+              white-space: nowrap;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translateX(-50%) translateY(-50%);
+
+              text-transform: uppercase;
+              font-size: 1.32vw;
+              line-height: 0.9;
+              font-weight: bold;
             }
 
             .card-live-image {
               width: 100%;
-              height: 200px;
+              height: 100%;
               background-color: #444;
               background-size: cover;
               background-position: center;
-              background-image: url('./images/soccer-card.png'); /* Замените placeholder.jpg на вашу ссылку */
             }
 
             .card-live-button {
+              width: 6.25vw;
               position: absolute;
               bottom: 0;
               left: 50%;
               transform: translate(-50%);
 
-              background-color: #00ff75;
-              color: #2a2a3c;
               border: none;
-              border-radius: 1600px;
-              padding: 6px 25px;
-              font-size: 16px;
+              border-radius: 83.3vw;
               cursor: pointer;
               margin-bottom: 5%;
               display: inline-block;
+              color: inherit;
+              background-color: inherit;
+              font-size: 1.25vw;
+              font-weight: 600;
             }
 
-            .card-button:hover {
-              background-color: #00cc5f;
+            .card-live-button:hover,
+            .card-live-button:focus {
+              scale: 1.05;
             }
             .section-live-cards_wraper {
               display: flex;
               flex-wrap: wrap;
-              gap: 20px;
+              justify-content: space-between;
+              /* gap: 40px 32px; */
+              gap: 1.9vw 1%;
             }
           </style>
           <div class="section-live-cards_wraper">
-            <div class="card-live">
-              <div class="card-live-header">SOCCER</div>
-              <div class="card-live-image"></div>
+            <div
+              class="card-live"
+              style="background-color: #00ff75; color: #000"
+            >
+              <div class="card-live-header__wrap">
+                <div class="card-live-header__text">soccer</div>
+              </div>
+              <div
+                style="background-image: url('./images/soccer-card.png')"
+                class="card-live-image"
+              ></div>
               <button class="card-live-button">Join</button>
             </div>
-            <div class="card-live">
-              <div class="card-live-header">SOCCER</div>
-              <div class="card-live-image"></div>
+            <div
+              class="card-live"
+              style="background-color: #af03fa; color: #fff"
+            >
+              <div class="card-live-header__wrap">
+                <div class="card-live-header__text">criccet</div>
+              </div>
+              <div
+                style="background-image: url('./images/cricket-card.png')"
+                class="card-live-image"
+              ></div>
               <button class="card-live-button">Join</button>
             </div>
-            <div class="card-live">
-              <div class="card-live-header">SOCCER</div>
-              <div class="card-live-image"></div>
+            <div
+              class="card-live"
+              style="background-color: #ffd900; color: #000"
+            >
+              <div class="card-live-header__wrap">
+                <div class="card-live-header__text">criccet</div>
+              </div>
+              <div
+                style="background-image: url('./images/tennis-card.png')"
+                class="card-live-image"
+              ></div>
               <button class="card-live-button">Join</button>
             </div>
-            <div class="card-live">
-              <div class="card-live-header">SOCCER</div>
-              <div class="card-live-image"></div>
+            <div
+              class="card-live"
+              style="background-color: #ff4400; color: #fff"
+            >
+              <div class="card-live-header__wrap">
+                <div class="card-live-header__text">basketball</div>
+              </div>
+              <div
+                style="background-image: url('./images/bassketball-card.png')"
+                class="card-live-image"
+              ></div>
               <button class="card-live-button">Join</button>
             </div>
-            <div class="card-live">
-              <div class="card-live-header">SOCCER</div>
-              <div class="card-live-image"></div>
+            <div
+              class="card-live"
+              style="background-color: #0bffe2; color: #000"
+            >
+              <div class="card-live-header__wrap">
+                <div class="card-live-header__text">table TENNIS</div>
+              </div>
+              <div
+                style="background-image: url('./images/table-tennis-card.png')"
+                class="card-live-image"
+              ></div>
               <button class="card-live-button">Join</button>
             </div>
-            <div class="card-live">
-              <div class="card-live-header">SOCCER</div>
-              <div class="card-live-image"></div>
+            <div
+              class="card-live"
+              style="background-color: #000dff; color: #fff"
+            >
+              <div class="card-live-header__wrap">
+                <div class="card-live-header__text">ice hockey</div>
+              </div>
+              <div
+                style="background-image: url('./images/hockey-card.png')"
+                class="card-live-image"
+              ></div>
               <button class="card-live-button">Join</button>
             </div>
-            <div class="card-live">
-              <div class="card-live-header">SOCCER</div>
-              <div class="card-live-image"></div>
+            <div
+              class="card-live"
+              style="background-color: #fa0307; color: #fff"
+            >
+              <div class="card-live-header__wrap">
+                <div class="card-live-header__text">volleyball</div>
+              </div>
+              <div
+                style="background-image: url('./images/volleyball-card.png')"
+                class="card-live-image"
+              ></div>
               <button class="card-live-button">Join</button>
             </div>
-            <div class="card-live">
-              <div class="card-live-header">SOCCER</div>
-              <div class="card-live-image"></div>
+            <div
+              class="card-live"
+              style="background-color: #ff00ee; color: #fff"
+            >
+              <div class="card-live-header__wrap">
+                <div class="card-live-header__text">volleyball</div>
+              </div>
+              <div
+                style="background-image: url('./images/basseball-card.png')"
+                class="card-live-image"
+              ></div>
               <button class="card-live-button">Join</button>
             </div>
           </div>
