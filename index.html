@@ -190,7 +190,7 @@
               background-color: #2a2a3c;
               border-radius: 0.95vw;
               /* width: 22.917vw; */
-              width: clamp(100px, 22.917vw, 440px);
+              width: clamp(120px, 22.917vw, 440px);
               height: 15.833vw;
               overflow: hidden;
               text-align: center;
@@ -198,6 +198,7 @@
             }
             .card-live-header__wrap {
               background-color: inherit;
+
               width: 9.375vw;
 
               height: 15%;
@@ -366,43 +367,65 @@
         </div>
       </section>
 
-      <section class="section-slots">
+      <section class="section-bets">
         <div class="container">
-          <div class="section-slots__list custom-scrollbar">
+          <div class="section-bets__list custom-scrollbar">
             <style>
               .card {
                 background-color: #2a2a3c;
                 color: white;
                 border-radius: 24px;
                 padding: 20px;
-                width: 400px;
-                height: 300px;
+                width: clamp(166px, 20.833vw, 400px);
+                aspect-ratio: 4/3;
+
                 background: linear-gradient(
                     256deg,
                     #2d2e3e -0.26%,
                     #1c1d23 126.03%
                   ),
                   linear-gradient(180deg, #2d2e3c 0%, #7a7ca2 100%);
-                padding: 7% 9%;
               }
-              /* .card :not(:last-child) {
-                margin-right: 34px;
-              } */
+
               .card h2 {
                 margin: 0;
                 font-size: clamp(16px, 5.5px + 1.75vw, 30px);
-                margin-bottom: 5%;
+                margin-bottom: 10%;
               }
 
               .card .option {
                 display: flex;
                 align-items: center;
-                margin-bottom: 10px;
+                margin-bottom: 5%;
+              }
+              .card .option input[type='radio'] {
+                display: none;
               }
 
-              .card .option input {
-                margin-right: 10px;
-                accent-color: #00ff75;
+              .card .option label {
+                position: relative;
+                padding-left: 30px;
+                cursor: pointer;
+                color: #00ff75;
+                font-size: 100%;
+              }
+
+              .card .option label::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 20px;
+                height: 20px;
+                border: 2px solid gray;
+                border-radius: 50%;
+                background-color: transparent;
+              }
+
+              .card .option input[type='radio']:checked + label::before {
+                background-color: #00ff75;
+                border-color: #00ff75;
               }
 
               .card button {
@@ -411,9 +434,9 @@
                 border: none;
                 border-radius: 5px;
                 padding: 10px 20px;
-                font-size: 16px;
+                font-size: 130%;
                 cursor: pointer;
-                width: 70%;
+                width: 46%;
               }
 
               .card button:hover {
@@ -425,12 +448,22 @@
               <div class="card">
                 <h2 style="color: #20fb56">Soccer</h2>
                 <div class="option">
-                  <input type="radio" name="team" id="western-australia" />
-                  <label for="western-australia">Western Australia</label>
+                  <input
+                    type="radio"
+                    name="soccer"
+                    id="western-australia_soccer"
+                  />
+                  <label for="western-australia_soccer"
+                    >Western Australia</label
+                  >
                 </div>
                 <div class="option">
-                  <input type="radio" name="team" id="tasmania-tigers" />
-                  <label for="tasmania-tigers">Tasmania Tigers</label>
+                  <input
+                    type="radio"
+                    name="soccer"
+                    id="tasmania-tigers_soccer"
+                  />
+                  <label for="tasmania-tigers_soccer">Tasmania Tigers</label>
                 </div>
                 <button>Bet</button>
               </div>
@@ -439,12 +472,22 @@
               <div class="card">
                 <h2 style="color: #af03fa">Cricket</h2>
                 <div class="option">
-                  <input type="radio" name="team" id="western-australia" />
-                  <label for="western-australia">Western Australia</label>
+                  <input
+                    type="radio"
+                    name="criccet"
+                    id="western-australia_criccet"
+                  />
+                  <label for="western-australia_criccet"
+                    >Western Australia</label
+                  >
                 </div>
                 <div class="option">
-                  <input type="radio" name="team" id="tasmania-tigers" />
-                  <label for="tasmania-tigers">Tasmania Tigers</label>
+                  <input
+                    type="radio"
+                    name="criccet"
+                    id="tasmania-tigers_criccet"
+                  />
+                  <label for="tasmania-tigers_criccet">Tasmania Tigers</label>
                 </div>
                 <button>Bet</button>
               </div>
@@ -453,12 +496,22 @@
               <div class="card">
                 <h2 style="color: #ffd900">Tennis</h2>
                 <div class="option">
-                  <input type="radio" name="team" id="western-australia" />
-                  <label for="western-australia">Western Australia</label>
+                  <input
+                    type="radio"
+                    name="Tennis"
+                    id="western-australia_Tennis"
+                  />
+                  <label for="western-australia_Tennis"
+                    >Western Australia</label
+                  >
                 </div>
                 <div class="option">
-                  <input type="radio" name="team" id="tasmania-tigers" />
-                  <label for="tasmania-tigers">Tasmania Tigers</label>
+                  <input
+                    type="radio"
+                    name="Tennis"
+                    id="tasmania-tigers_Tennis"
+                  />
+                  <label for="tasmania-tigers_Tennis">Tasmania Tigers</label>
                 </div>
                 <button>Bet</button>
               </div>
@@ -467,12 +520,24 @@
               <div class="card">
                 <h2 style="color: #f40">Basketball</h2>
                 <div class="option">
-                  <input type="radio" name="team" id="western-australia" />
-                  <label for="western-australia">Western Australia</label>
+                  <input
+                    type="radio"
+                    name="Basketball"
+                    id="western-australia_Basketball"
+                  />
+                  <label for="western-australia_Basketball"
+                    >Western Australia</label
+                  >
                 </div>
                 <div class="option">
-                  <input type="radio" name="team" id="tasmania-tigers" />
-                  <label for="tasmania-tigers">Tasmania Tigers</label>
+                  <input
+                    type="radio"
+                    name="Basketball"
+                    id="tasmania-tigers_Basketball"
+                  />
+                  <label for="tasmania-tigers_Basketball"
+                    >Tasmania Tigers</label
+                  >
                 </div>
                 <button>Bet</button>
               </div>
@@ -481,12 +546,24 @@
               <div class="card">
                 <h2 style="color: #0bffe2">Table tennis</h2>
                 <div class="option">
-                  <input type="radio" name="team" id="western-australia" />
-                  <label for="western-australia">Western Australia</label>
+                  <input
+                    type="radio"
+                    name="table-tennis"
+                    id="western-australia_table-tennis"
+                  />
+                  <label for="western-australia_table-tennis"
+                    >Western Australia</label
+                  >
                 </div>
                 <div class="option">
-                  <input type="radio" name="team" id="tasmania-tigers" />
-                  <label for="tasmania-tigers">Tasmania Tigers</label>
+                  <input
+                    type="radio"
+                    name="table-tennis"
+                    id="tasmania-tigers_table-tennis"
+                  />
+                  <label for="tasmania-tigers_table-tennis"
+                    >Tasmania Tigers</label
+                  >
                 </div>
                 <button>Bet</button>
               </div>
@@ -495,54 +572,73 @@
               <div class="card">
                 <h2 style="color: #f0e">Baseball</h2>
                 <div class="option">
-                  <input type="radio" name="team" id="western-australia" />
-                  <label for="western-australia">Western Australia</label>
+                  <input
+                    type="radio"
+                    name="Baseball"
+                    id="western-australia_Baseball"
+                  />
+                  <label for="western-australia_Baseball"
+                    >Western Australia</label
+                  >
                 </div>
                 <div class="option">
-                  <input type="radio" name="team" id="tasmania-tigers" />
-                  <label for="tasmania-tigers">Tasmania Tigers</label>
+                  <input
+                    type="radio"
+                    name="Baseball"
+                    id="tasmania-tigers_Baseball"
+                  />
+                  <label for="tasmania-tigers_Baseball">Tasmania Tigers</label>
                 </div>
                 <button>Bet</button>
               </div>
             </div>
             <div class="game-container">
               <div class="card">
-                <h2 style="color: #000dff">Soccer</h2>
+                <h2 style="color: #000dff">Ice Hockey</h2>
                 <div class="option">
-                  <input type="radio" name="team" id="western-australia" />
-                  <label for="western-australia">Western Australia</label>
+                  <input
+                    type="radio"
+                    name="Hockey"
+                    id="western-australia_Hockey"
+                  />
+                  <label for="western-australia_Hockey"
+                    >Western Australia</label
+                  >
                 </div>
                 <div class="option">
-                  <input type="radio" name="team" id="tasmania-tigers" />
-                  <label for="tasmania-tigers">Tasmania Tigers</label>
-                </div>
-                <button>Bet</button>
-              </div>
-            </div>
-            <div class="game-container">
-              <div class="card">
-                <h2 style="color: #ffd900">Tennis</h2>
-                <div class="option">
-                  <input type="radio" name="team" id="western-australia" />
-                  <label for="western-australia">Western Australia</label>
-                </div>
-                <div class="option">
-                  <input type="radio" name="team" id="tasmania-tigers" />
-                  <label for="tasmania-tigers">Tasmania Tigers</label>
+                  <input
+                    type="radio"
+                    name="Hockey"
+                    id="tasmania-tigers_Hockey"
+                  />
+                  <label for="tasmania-tigers_Hockey">Tasmania Tigers</label>
                 </div>
                 <button>Bet</button>
               </div>
             </div>
+
             <div class="game-container">
               <div class="card">
                 <h2 style="color: #fa0307">Volleyball</h2>
                 <div class="option">
-                  <input type="radio" name="team" id="western-australia" />
-                  <label for="western-australia">Western Australia</label>
+                  <input
+                    type="radio"
+                    name="Volleyball"
+                    id="western-australia_Volleyball"
+                  />
+                  <label for="western-australia_Volleyball"
+                    >Western Australia</label
+                  >
                 </div>
                 <div class="option">
-                  <input type="radio" name="team" id="tasmania-tigers" />
-                  <label for="tasmania-tigers">Tasmania Tigers</label>
+                  <input
+                    type="radio"
+                    name="Volleyball"
+                    id="tasmania-tigers_Volleyball"
+                  />
+                  <label for="tasmania-tigers_Volleyball"
+                    >Tasmania Tigers</label
+                  >
                 </div>
                 <button>Bet</button>
               </div>
@@ -555,7 +651,22 @@
         <div class="container">
           <div class="bottom-banner-card">
             <picture>
+              <source
+                media="(max-width: 600px)"
+                srcset="./images/bottom-banner-small.png"
+              />
+              <source
+                media="(min-width: 601px)"
+                srcset="./images/bottom-banner.png"
+              />
               <img
+                class="bottom-banner-card__image"
+                src="./images/bottom-banner.png"
+                width="100vw"
+                height="100hw"
+                alt="bottom banner»."
+              />
+              <!-- <img
                 srcset="
                   ./images/bottom-banner-small.png  600w,
                   ./images/bottom-banner.png       1200w
@@ -563,7 +674,7 @@
                 class="bottom-banner-card__image"
                 src="./images/bottom-banner.png"
                 alt="image"
-              />
+              /> -->
             </picture>
             <div class="banner-card__inner bottom-baner-inner">
               <div class="banner-card__content">

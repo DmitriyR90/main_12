@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bet Cards</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1e1e2f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .card {
+        background-color: #2a2a3c;
+        color: #00ff75;
+        border-radius: 10px;
+        padding: 20px;
+        width: 250px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .card h2 {
+        margin: 0;
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      .card .option {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      /* Скрываем стандартный input */
+      .card .option input[type='radio'] {
+        display: none;
+      }
+
+      /* Создаем кастомный круг */
+      .card .option label {
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+        color: #00ff75;
+        font-size: 16px;
+      }
+
+      .card .option label::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        border: 2px solid gray;
+        border-radius: 50%;
+        background-color: transparent;
+      }
+
+      /* При выборе цвет становится зеленым */
+      .card .option input[type='radio']:checked + label::before {
+        background-color: #00ff75;
+        border-color: #00ff75;
+      }
+
+      .card button {
+        background-color: #00ff75;
+        color: #2a2a3c;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .card button:hover {
+        background-color: #00cc5f;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Карточка 1 -->
+    <div class="card">
+      <h2>Soccer 1</h2>
+      <div class="option">
+        <input type="radio" name="team1" id="team1-a" />
+        <label for="team1-a">Team A</label>
+      </div>
+      <div class="option">
+        <input type="radio" name="team1" id="team1-b" />
+        <label for="team1-b">Team B</label>
+      </div>
+      <button>Bet</button>
+    </div>
+
+    <!-- Карточка 2 -->
+    <div class="card">
+      <h2>Soccer 2</h2>
+      <div class="option">
+        <input type="radio" name="team2" id="team2-a" />
+        <label for="team2-a">Team A</label>
+      </div>
+      <div class="option">
+        <input type="radio" name="team2" id="team2-b" />
+        <label for="team2-b">Team B</label>
+      </div>
+      <button>Bet</button>
+    </div>
+
+    <!-- Карточка 3 -->
+    <div class="card">
+      <h2>Soccer 3</h2>
+      <div class="option">
+        <input type="radio" name="team3" id="team3-a" />
+        <label for="team3-a">Team A</label>
+      </div>
+      <div class="option">
+        <input type="radio" name="team3" id="team3-b" />
+        <label for="team3-b">Team B</label>
+      </div>
+      <button>Bet</button>
+    </div>
+  </body>
+</html>
