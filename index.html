@@ -6,7 +6,6 @@
     <title>Document</title>
   </head>
   <link rel="stylesheet" href="./styles/fonts.css" />
-  <!-- <link rel="stylesheet" href="./styles/root.css" /> -->
   <link rel="stylesheet" href="./styles/style.css" />
   <link rel="stylesheet" href="./styles/svg.css" />
 
@@ -186,15 +185,51 @@
       <section class="section-live">
         <div class="container">
           <style>
+            .live__header {
+              display: flex;
+              align-items: center;
+              vertical-align: middle;
+              line-height: 0.8;
+            }
+            .live__header img {
+              width: clamp(26px, 5.5px + 2.1vw, 42px);
+            }
+            .live__header h2 {
+              margin-bottom: -11px;
+              margin-left: 0.8%;
+            }
             .card-live {
               background-color: #2a2a3c;
               border-radius: 0.95vw;
-              /* width: 22.917vw; */
-              width: clamp(120px, 22.917vw, 440px);
-              height: 15.833vw;
+
+              aspect-ratio: 1.45;
+
               overflow: hidden;
               text-align: center;
               position: relative;
+            }
+
+            @media (min-width: 678px) {
+              .card-live {
+                width: clamp(158px, calc(90vw / 4), 440px);
+              }
+              .section-live-cards_wraper {
+                grid-template-columns: repeat(4, 1fr);
+              }
+            }
+
+            @media (max-width: 677px) {
+              .live__header h2 {
+                margin-bottom: -7px;
+                margin-left: 2%;
+              }
+
+              .card-live {
+                width: calc(90vw / 2);
+              }
+              .section-live-cards_wraper {
+                grid-template-columns: repeat(2, 1fr);
+              }
             }
             .card-live-header__wrap {
               background-color: inherit;
@@ -250,14 +285,30 @@
             .card-live-button:focus {
               scale: 1.05;
             }
-            .section-live-cards_wraper {
+            /* .section-live-cards_wraper {
               display: flex;
               flex-wrap: wrap;
               justify-content: space-between;
-              /* gap: 40px 32px; */
               gap: 1.9vw 1%;
+            } */
+            .section-live-cards_wraper {
+              display: grid;
+              gap: 1.9vw 1%;
+              /* gap: 20px; 
+              max-width: 800px;
+              width: 100%;
+              padding: 20px; */
             }
           </style>
+          <div class="section-banners__header live__header">
+            <img
+              src="./images/svg/live-svg.svg"
+              alt="in live icon"
+              width="41.5"
+              height="41.5"
+            />
+            <h2 class="section-banners__title">Live</h2>
+          </div>
           <div class="section-live-cards_wraper">
             <div
               class="card-live"
@@ -396,7 +447,7 @@
               .card .option {
                 display: flex;
                 align-items: center;
-                margin-bottom: 5%;
+                margin-bottom: 10%;
               }
               .card .option input[type='radio'] {
                 display: none;
@@ -407,7 +458,8 @@
                 padding-left: 30px;
                 cursor: pointer;
                 color: #00ff75;
-                font-size: 100%;
+                font-size: clamp(8.4px, 7.645px + 0.645vw, 20px);
+                /* font-size: 100%; */
               }
 
               .card .option label::before {
@@ -429,14 +481,14 @@
               }
 
               .card button {
+                cursor: pointer;
+                width: 46%;
                 background-color: #20fb56;
                 color: #2a2a3c;
                 border: none;
                 border-radius: 5px;
+                font-size: clamp(10px, 7.645px + 0.745vw, 25px);
                 padding: 10px 20px;
-                font-size: 130%;
-                cursor: pointer;
-                width: 46%;
               }
 
               .card button:hover {
